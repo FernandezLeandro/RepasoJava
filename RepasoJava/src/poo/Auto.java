@@ -103,4 +103,43 @@ public class Auto {
 		}else
 			return "No tiene asientos de cuero";
 	}
+	
+	public void config_climatizador (String climatizador) {
+		if (climatizador.equalsIgnoreCase("si")) {
+			this.climatizador = true;
+		} else if (climatizador.equalsIgnoreCase("no")){
+			this.climatizador=false;
+		}
+	}
+	public String datoClimatizador () {
+		if (this.climatizador) {
+			return "Tiene climatizador";
+		}else
+			return "No tiene climatizador";
+		
+	}
+	
+	//Metodo setter y getter (no recomendada en POO)
+	public String calcPesoAuto () {
+		int pesoCarroseria = 500;
+		pesoFinal = pesoPlataforma + pesoCarroseria;
+		if (this.asientosCuero) {
+			pesoFinal+= 50;
+		}
+		if (this.climatizador) {
+			pesoFinal += 20;
+		}
+		return "El peso final es de " + pesoFinal + " kg.";
+	}
+	
+	public int precioCoche () {
+		int precioFinal = 10000;
+		if (this.asientosCuero) {
+			precioFinal+= 2000;
+		}
+		if (this.climatizador) {
+			precioFinal += 1500;
+		}
+		return precioFinal;
+	}
 }
