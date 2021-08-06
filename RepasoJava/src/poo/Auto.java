@@ -1,7 +1,7 @@
 package poo;
 
 public class Auto {
-	String color;
+	private String color;
 	private int pesoPlataforma;
 	private int motor;
 	private int ancho;
@@ -9,6 +9,7 @@ public class Auto {
 	private int ruedas;
 	private int pesoFinal;
 	private boolean asientosCuero, climatizador;
+	//private String peso;
 	
 	public int getPesoPlataforma () {
 		return pesoPlataforma;
@@ -88,6 +89,18 @@ public class Auto {
 		largo = 2000;
 		ancho = 300;
 		motor = 1600;
-		pesoPlataforma = 500;;
+		pesoPlataforma = 500;
+		
+	}
+	public String datosGenerales () {
+		return "La plataforma tiene " + this.ruedas + " ruedas, mide " + this.largo/1000 + " metros de ancho,"
+				+ " es de color " + this.getColor() + " y con un peso de " + this.getPesoPlataforma() + " kilos.";
+	}
+	
+	public String datoAsientos () {
+		if (this.asientosCuero) {
+			return "Tiene asientos de cuero";
+		}else
+			return "No tiene asientos de cuero";
 	}
 }
