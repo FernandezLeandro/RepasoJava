@@ -23,7 +23,13 @@ public class UsoAuto {
 			break;
 			
 		}
+		System.out.println("Tiene climatizador? Ingrese Si o No");
+		
+		auto1.config_climatizador(entrada.nextLine());
 		System.out.println(auto1.datoAsientos());
+		System.out.println(auto1.datoClimatizador());
+		System.out.println(auto1.calcPesoAuto());
+		System.out.println("El precio del coche es de " + auto1.precioCoche());
 	}
 
 }
